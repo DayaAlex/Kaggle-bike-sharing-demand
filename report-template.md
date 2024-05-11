@@ -17,7 +17,7 @@
 I could not find much from the EDA from just histogram viewing. I could see that train and test sets had similar histograms for their features except for 'day' which revealed that test set had days toward the end of the month, while the train set had days earlier in the month.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-Splitting the datetime feature gave a huge boost in results, the datetime feauture in itself was not discriminative, but the model could find out patterns from the feature engineered values like 'hour','day'
+Splitting the datetime feature gave a huge boost in results, the datetime feature in itself was not discriminative, but the model could find out patterns from the feature engineered values like 'hour','day'
 'is_month_start', 'is_year_start'.
 
 ## Hyper parameter tuning
