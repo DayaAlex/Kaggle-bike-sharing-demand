@@ -3,22 +3,14 @@
 
 ## Initial Training
 ### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
-All the count values had to be positive, negative values had to be clipped. Train and Test tables had to have same columns for Predictor.predict to work, so dropped columns:'casual', 'registered' from train table.
+- **Submission Realization:** Negative prediction values had to be clipped to zero as counts can't be negative. The train and test datasets needed to have the same columns for successful predictions, requiring the removal of 'casual' and 'registered' columns from the training data.
 
 ### What was the top ranked model that performed?
-In the case of vanila train and test dataframes://
-KNeighborsDist and WeightedEnsemble_L2   -92.452800   
-
-In the case of feature engineered train and test dataframes://
-WeightedEnsemble_L2  32.362633
-
-In the manual hyperparameter tuning of gbm,knn, and nn://
-WeightedEnsemble_L2  47.594046
-
-In the automated hyperparameter tuning case://
-WeightedEnsemble_L2: 34.702
-
-Best overall model was the WeightedEnsemble_L2 created using feauture engineered data, with rmse=32.362633.
+- **Initial Data:** KNeighborsDist and WeightedEnsemble_L2 with an RMSE of -92.452800.
+- **Feature Engineered Data:** WeightedEnsemble_L2 with an RMSE of 32.362633.
+- **Manual Hyperparameter Tuning:** RMSE of 47.594046.
+- **Automated Hyperparameter Tuning:** RMSE of 34.702.
+- **Best Overall:** WeightedEnsemble_L2 created using feature engineered data.
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
@@ -51,4 +43,4 @@ Exploratory Data analysis to create more relevant features, try tweaking Weighte
 ![model_test_score.png](img/model_test_score.png)
 
 ## Summary
-Manual hyperparameter tuning revealed that neur
+I could learn many things by trying out this Kaggle competition using Autogluon. I could see that neural networks were not the front runners in regression task in tabular data and instead Weighted Ensemble methods were the stars. I understood the impact of feature engineering, how it is as important as hyperparmeter optimisation
